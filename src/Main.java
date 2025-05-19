@@ -6,7 +6,7 @@ public class Main {
 
 
 
-        Dodavka dodavka = new Dodavka();
+        Dodavka dodavka = new Dodavka(2);
 
         OsobniVozidla vozidlo = new OsobniVozidla(5);
         vozidlo.zmenPocetOsob(2);
@@ -16,7 +16,7 @@ public class Main {
         vozidlo = dodavka;
 
         List<Dodavka> evidenceV = new ArrayList<>();
-     evidenceV.add(new Dodavka());
+     evidenceV.add(new Dodavka(2));
         Dodavka dodavka1 = (Dodavka) evidenceV.get(1);
 
 
