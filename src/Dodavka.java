@@ -1,18 +1,28 @@
-public class Dodavka {
+public class Dodavka extends OsobniVozidla {
 
-    private int pocetSedadel = 2;
-    private int pocetOsob;
+
     private int uzitecnaHmotnost = 500;
     private int hmotnostNakladu;
 
-    public void zmenitPocetOsob(int pocetOsob) {
-        if (pocetOsob >= 0 || pocetOsob <= pocetSedadel) {
-            this.pocetOsob = pocetOsob;
-        } else {
-            System.out.println("Počet osob musí být kladný");
-        }
-
+    public Dodavka(int pocetSedadel, int uzitecnaHmotnost) {
+        super(pocetSedadel);
+        this.uzitecnaHmotnost = uzitecnaHmotnost;
     }
+public Dodavka(int uzitecnaHmotnost){
+        this(5, uzitecnaHmotnost);
+}
 
+    public void omezeni() {
+        int celkovaHmotnost = 0;
+      //  int hmotnostOsob = pocetSedadel * 120;
+   //     celkovaHmotnost += hmotnostNakladu += hmotnostOsob;
+
+        if (celkovaHmotnost > uzitecnaHmotnost) {
+            System.out.println("Přetížení vozidla");
+        }
+        else {
+            System.out.println("vše v pořádku");
+        }
+    }
 
 }

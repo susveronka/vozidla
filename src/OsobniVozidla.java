@@ -1,16 +1,22 @@
 public class OsobniVozidla {
-    private int pocetSedadel;
+    private final int pocetSedadel; // final - nebude se měnit
     private int pocetOsob;
 
-    public OsobniVozidla() {
-        pocetOsob = 0;
+    public OsobniVozidla(int pocetSedadel) {
+        this.pocetSedadel = pocetSedadel;
+        this.pocetOsob = 0;
     }
 
-    public void zmenitPocetOsob(int pocetOsob) {
-        if (pocetOsob >= 0 || pocetOsob <= pocetSedadel) {
-            this.pocetOsob = pocetOsob;
-        } else {
-            System.out.println("Počet osob musí být kladný.");
-        }
+    public int zmenPocetOsob(int oKolik) {
+        int puvodniPocetOsob = pocetOsob;
+        pocetOsob = Math.max(0, Math.min(pocetOsob + oKolik, pocetSedadel));
+        return pocetOsob - puvodniPocetOsob;
     }
+    public int getPocetSedadel() {
+        return pocetSedadel;
+    }
+    public int getPocetOsob() {
+        return pocetOsob;
+    }
+
 }
