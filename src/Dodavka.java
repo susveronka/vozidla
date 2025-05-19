@@ -9,7 +9,7 @@ public class Dodavka {
         if (pocetOsob >= 0 || pocetOsob <= pocetSedadel) {
             this.pocetOsob = pocetOsob;
         } else {
-            System.out.println("Počet osob musí být kladný.");
+            System.out.println("Počet osob musí být kladný");
         }
 
     }
